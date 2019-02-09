@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run docker_travis_test yarn test -- --coverage
+
+deploy:
+  provider: elastikbeanstalk
+  region: "eu-central-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-291040868367"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
