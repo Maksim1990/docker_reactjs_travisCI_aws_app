@@ -9,7 +9,7 @@ script:
   - docker run docker_travis_test yarn test -- --coverage
 
 deploy:
-  provider: elastikbeanstalk
+  provider: elasticbeanstalk
   region: "eu-central-1"
   app: "docker-react"
   env: "DockerReact-env"
