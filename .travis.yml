@@ -1,0 +1,6 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t maksim1990/docker_reactjs_travisCI_aws_app -f Dockerfile.dev .
